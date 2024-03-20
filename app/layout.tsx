@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
 import { Navbar } from "@/components/Navbar";
-import { BackgroundBeams } from "@/components/Background";
 
 const inter = Inter({ subsets: ["latin"] });
 

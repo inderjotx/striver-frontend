@@ -60,6 +60,11 @@ export function DataTable<TData, TValue>({
         },
     })
 
+    function handleReset() {
+        table.getColumn("firstName")?.setFilterValue("")
+        table.getColumn("language")?.setFilterValue("")
+    }
+
     return (
         <div>
             <div className="flex gap-2 items-center py-4">
@@ -74,6 +79,7 @@ export function DataTable<TData, TValue>({
 
                 <SelectLanguage width='md:w-[300px] w-[150px]' language={(table.getColumn("language")?.getFilterValue() as SupportedLanguages) ?? ""} setLanguage={(val) => { table.getColumn("language")?.setFilterValue(val) }} />
 
+                <Button type='button' onClick={handleReset} variant={"secondary"} >Reset</Button>
             </div>
 
             <div className="rounded-md border">

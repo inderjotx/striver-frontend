@@ -1,7 +1,9 @@
+'use server'
 
 import { formDataSchema } from "@/lib/validations";
 import { formDataType } from "@/types/zodTypes";
 import { env } from "@/env.mjs"
+import { revalidatePath } from "next/cache";
 
 
 
@@ -32,6 +34,8 @@ export async function submitData(data: formDataType): Promise<SubmitDataResponse
         }).then(data => data.json());
 
 
+        // revalidating cache
+        revalidatePath('/dashboard')
 
         return response
 

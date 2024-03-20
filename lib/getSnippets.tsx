@@ -5,7 +5,8 @@ type GetSnippetsResponse<T extends boolean> = T extends true ? { success: T, dat
 
 export async function getSnippets(): Promise<GetSnippetsResponse<boolean>> {
 
-    const response = await fetch(`${env.NEXT_PUBLIC_BACKEND_URL}/snippets`, { cache: "no-store" }).then(data => data.json())
+
+    const response = await fetch(`${env.NEXT_PUBLIC_BACKEND_URL}/snippets`).then(data => data.json())
     return response
 
 }
