@@ -79,8 +79,8 @@
 
 .cool_text_2 {
   --bg-size: 400%;
-  --color-one: hsl(103, 96%, 64%);
-  --color-two: hsl(183, 95%, 55%);
+  --color-one: hsl(103, 100%, 50%);
+  --color-two: hsl(183, 100%, 50%);
   font-family: sans-serif;
   background: linear-gradient(90deg,
       var(--color-one),
