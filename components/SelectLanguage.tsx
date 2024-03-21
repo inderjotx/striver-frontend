@@ -26,7 +26,7 @@ export function SelectLanguage({ language, setLanguage, width = "w-full" }: Sele
     return (
         <Select value={language} onValueChange={setLanguage} >
             <SelectTrigger className={`${width}`}>
-                <SelectValue placeholder="Select Language " />
+                <SelectValue placeholder="Language" />
             </SelectTrigger>
             <SelectContent>
                 <SelectGroup>

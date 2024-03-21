@@ -16,7 +16,7 @@ export const columns: ColumnDef<Snippet>[] = [
             const code = row.getValue("code") as SupportedLanguages
             const stdOut = row.getValue("stdOut") as SupportedLanguages
 
-            return <DrawerViewCode stdOut={stdOut} language={language} code={code} height="h-[500px]" width="w-fuu" />
+            return <DrawerViewCode stdOut={stdOut} language={language} code={code} height="h-[500px]" width="w-full" />
         }
 
     },
@@ -83,7 +83,7 @@ export const columns: ColumnDef<Snippet>[] = [
         cell: ({ row }) => {
             const value = row.getValue("createdAt") as string
             const formattedTime = formatTime(value)
-            return <div>{`${formattedTime ? formattedTime : "null"}`}</div>
+            return <div className="truncate">{`${formattedTime ? formattedTime : "null"}`}</div>
         }
 
     },

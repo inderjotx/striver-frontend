@@ -30,8 +30,8 @@ export function Navbar() {
             </div>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild >
-                    <Button variant={"ghost"} className='absolute right-2 md:right-8 rounded-full px-3'  >
-                        <Github className='size-6 '></Github>
+                    <Button variant={"ghost"} className='absolute right-1 md:right-8 rounded-full px-3'  >
+                        <Github className='size-5 md:size-6 '></Github>
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
