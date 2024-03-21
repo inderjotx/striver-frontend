@@ -14,8 +14,9 @@ export const columns: ColumnDef<Snippet>[] = [
         cell: ({ row }) => {
             const language = row.getValue("language") as SupportedLanguages
             const code = row.getValue("code") as SupportedLanguages
+            const stdOut = row.getValue("stdOut") as SupportedLanguages
 
-            return <DrawerViewCode language={language} code={code} height="h-[500px]" width="w-fuu" />
+            return <DrawerViewCode stdOut={stdOut} language={language} code={code} height="h-[500px]" width="w-fuu" />
         }
 
     },
