@@ -8,7 +8,11 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
+import { Metadata } from "next/types";
 
+export const metadata: Metadata = {
+  title: "Create"
+}
 
 export default async function Home() {
 

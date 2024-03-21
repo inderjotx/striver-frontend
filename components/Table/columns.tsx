@@ -3,9 +3,22 @@
 import { ColumnDef } from "@tanstack/react-table"
 import { Button } from "../ui/button"
 import { ArrowUpDown } from "lucide-react"
+import { formatTime } from "@/lib/utils"
+import { DrawerViewCode } from "../DrawerViewCode"
 
 export const columns: ColumnDef<Snippet>[] = [
 
+    {
+        accessorKey: "createdAt",
+        header: "View",
+        cell: ({ row }) => {
+            const language = row.getValue("language") as SupportedLanguages
+            const code = row.getValue("code") as SupportedLanguages
+
+            return <DrawerViewCode language={language} code={code} height="h-[500px]" width="w-fuu" />
+        }
+
+    },
     {
         accessorKey: "firstName",
         header: ({ column }) => {
@@ -65,7 +78,13 @@ export const columns: ColumnDef<Snippet>[] = [
 
     {
         accessorKey: "createdAt",
-        header: "Time"
+        header: "Time",
+        cell: ({ row }) => {
+            const value = row.getValue("createdAt") as string
+            const formattedTime = formatTime(value)
+            return <div>{`${formattedTime ? formattedTime : "null"}`}</div>
+        }
+
     },
 
 ]

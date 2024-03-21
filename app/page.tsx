@@ -2,12 +2,23 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { ArrowRight } from 'lucide-react'
 import { Poppins } from 'next/font/google'
+import type { Metadata } from "next";
 import Link from 'next/link'
 import React from 'react'
 
 const poppins = Poppins({ subsets: ["latin"], style: "normal", weight: ['800', '900'] })
 
+
+export const metadata: Metadata = {
+    title: "Home"
+}
+
+
+
 export default function page() {
+
+
+
     return (
         <div className="relative h-full w-full ">
 
