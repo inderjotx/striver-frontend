@@ -75,10 +75,10 @@ export function DataTable<TData, TValue>({
                     onChange={(event) =>
                         table.getColumn("firstName")?.setFilterValue(event.target.value)
                     }
-                    className="max-w-sm w-[200px]"
+                    className="max-w-sm w-[100px] md:w-[200px] "
                 />
 
-                <SelectLanguage width='md:w-[300px] w-[150px]' language={(table.getColumn("language")?.getFilterValue() as SupportedLanguages) ?? ""} setLanguage={(val) => { table.getColumn("language")?.setFilterValue(val) }} />
+                <SelectLanguage width='md:w-[300px] w-[100px]' language={(table.getColumn("language")?.getFilterValue() as SupportedLanguages) ?? ""} setLanguage={(val) => { table.getColumn("language")?.setFilterValue(val) }} />
 
                 <Button type='button' onClick={handleReset} variant={"secondary"} >Reset</Button>
             </div>

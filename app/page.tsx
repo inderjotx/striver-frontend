@@ -25,15 +25,15 @@ export default function page() {
             <div className='flex gap-5 flex-col w-full h-[450px] justify-center items-center'>
 
                 <div className='flex  items-center gap-3  flex-col'>
-                    <h1 className={cn('text-6xl font-black', poppins.className)}>SnippetSpace</h1>
+                    <h1 className={cn('md:text-6xl text-3xl  font-black', poppins.className)}>SnippetSpace</h1>
                     <div className={cn('flex gap-2')}>
-                        <h2 className={cn('cool_text_1 text-5xl font-black', poppins.className)}>Share,</h2>
-                        <h2 className={cn('cool_text_2 text-5xl font-black', poppins.className)}>Learn,</h2>
-                        <h2 className={cn('cool_text_3 text-5xl font-black', poppins.className)}>Code</h2>
+                        <h2 className={cn('cool_text_1 md:text-5xl text-xl  font-black', poppins.className)}>Share,</h2>
+                        <h2 className={cn('cool_text_2 md:text-5xl text-xl  ', poppins.className)}>Learn,</h2>
+                        <h2 className={cn('cool_text_3 md:text-5xl text-xl  ', poppins.className)}>Code </h2>
                     </div>
                 </div>
 
-                <Button className='text-xl p-5 rounded-full' variant={"outline"} asChild >
+                <Button className='lg:text-xl lg:p-5 rounded-full' variant={"outline"} asChild >
                     <Link href={'/create'} className='space-x-2 group' >
                         <span> Get Started </span> <ArrowRight className='group-hover:translate-x-1 transition-all' />
                     </Link>

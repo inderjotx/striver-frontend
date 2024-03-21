@@ -19,10 +19,10 @@ import {
 export function Navbar() {
     return (
         <nav className='flex  relative h-20  justify-center items-center'>
-            <div className='relative flex px-8 bg-muted text-sm items-center gap-3 h-10 rounded-full'>
+            <div className='relative flex px-8 bg-muted  text-sm items-center gap-3  h-10 rounded-full'>
                 {
                     NAVLINKS.map(({ name, href }) => (
-                        <Link key={name} href={href} className='p-1 hover:bg-black/50 px-3 rounded-full' >
+                        <Link key={name} href={href} className='p-1 px-2 hover:bg-black/50  rounded-full' >
                             {name}
                         </Link>
                     ))
@@ -30,7 +30,7 @@ export function Navbar() {
             </div>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild >
-                    <Button variant={"ghost"} className='absolute right-8 rounded-full px-3'  >
+                    <Button variant={"ghost"} className='absolute right-2 md:right-8 rounded-full px-3'  >
                         <Github className='size-6 '></Github>
                     </Button>
                 </DropdownMenuTrigger>
