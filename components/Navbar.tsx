@@ -2,7 +2,16 @@ import { NAVLINKS } from '@/constant'
 import { Github } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
+import { Button } from './ui/button'
 
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 
 
@@ -19,10 +28,27 @@ export function Navbar() {
                     ))
                 }
             </div>
-            <a href={'https://github.com/inderjotx/striver-frontend'} className='absolute right-8' target='_blank' >
-                <Github className='size-6 '></Github>
-            </a>
-
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild >
+                    <Button variant={"ghost"} className='absolute right-8 rounded-full px-3'  >
+                        <Github className='size-6 '></Github>
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                    <DropdownMenuLabel>Github</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                        <a target='_blank' href='https://github.com/inderjotx/striver-frontend' >
+                            Frontend
+                        </a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                        <a target='_blank' href='https://github.com/inderjotx/striver-backend' >
+                            Backend
+                        </a>
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
         </nav>
     )
 }

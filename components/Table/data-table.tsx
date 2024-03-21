@@ -27,6 +27,7 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { SelectLanguage } from '../SelectLanguage'
+import { DrawerViewCode } from '../DrawerViewCode'
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -105,16 +106,20 @@ export function DataTable<TData, TValue>({
                     <TableBody>
                         {table.getRowModel().rows?.length ? (
                             table.getRowModel().rows.map((row) => (
-                                <TableRow
-                                    key={row.id}
-                                    data-state={row.getIsSelected() && "selected"}
-                                >
-                                    {row.getVisibleCells().map((cell) => (
-                                        <TableCell key={cell.id}>
-                                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                        </TableCell>
-                                    ))}
-                                </TableRow>
+                                <DrawerViewCode key={row.id} language={row.getValue('language') as SupportedLanguages} code={row.getValue('code')} height="h-[500px]" width="w-full" >
+                                    <TableRow
+                                        key={row.id}
+                                        data-state={row.getIsSelected() && "selected"}
+                                    >
+
+                                        {row.getVisibleCells().map((cell) => (
+                                            <TableCell key={cell.id}>
+                                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                            </TableCell>
+                                        ))}
+
+                                    </TableRow>
+                                </DrawerViewCode>
                             ))
                         ) : (
                             <TableRow>
