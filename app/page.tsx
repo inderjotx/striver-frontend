@@ -22,14 +22,14 @@ export default function page() {
     return (
         <div className="relative h-full w-full ">
 
-            <div className='flex gap-5 flex-col w-full h-screen items-center'>
+            <div className='flex gap-5 flex-col w-full h-[450px] justify-center items-center'>
 
-                <div className='flex  items-center gap-3  mt-20 flex-col'>
-                    <h1 className={cn('text-5xl font-black', poppins.className)}>SnippetSpace</h1>
+                <div className='flex  items-center gap-3  flex-col'>
+                    <h1 className={cn('text-6xl font-black', poppins.className)}>SnippetSpace</h1>
                     <div className={cn('flex gap-2')}>
-                        <h2 className={cn('cool_text_1 text-4xl font-black', poppins.className)}>Share,</h2>
-                        <h2 className={cn('cool_text_2 text-4xl font-black', poppins.className)}>Learn,</h2>
-                        <h2 className={cn('cool_text_3 text-4xl font-black', poppins.className)}>Code</h2>
+                        <h2 className={cn('cool_text_1 text-5xl font-black', poppins.className)}>Share,</h2>
+                        <h2 className={cn('cool_text_2 text-5xl font-black', poppins.className)}>Learn,</h2>
+                        <h2 className={cn('cool_text_3 text-5xl font-black', poppins.className)}>Code</h2>
                     </div>
                 </div>
 
