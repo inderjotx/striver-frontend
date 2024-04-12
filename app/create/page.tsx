@@ -8,6 +8,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
+import { getTags } from "@/lib/getTags";
 import { Metadata } from "next/types";
 
 export const metadata: Metadata = {
@@ -16,19 +17,20 @@ export const metadata: Metadata = {
 
 export default async function Home() {
 
+  const tags = await getTags()
+  console.log(tags)
+
   return (
     <div className="w-full h-screen flex z-50 items-start mt-10 justify-center">
       <div className="h-10/12  w-10/12 gap-3 flex ">
         <div className="w-full lg:w-1/3  md:w-1/2 rounded-md">
-          <Form />
+          <Form tags={tags} />
         </div>
         <div className="lg:w-2/3 md:w-1/2 hidden md:flex    overflow-hidden rounded-md">
           {/* todo: add suspense boundary */}
 
           <ResizablePanelGroup direction="vertical">
-
             <ResizablePanel minSize={6} defaultSize={70}>
-
               <CodeEditor height="h-[500px]" width="w-full" className="" />
             </ResizablePanel>
             <ResizableHandle />

@@ -13,13 +13,16 @@ import { submitData } from "@/lib/submitData";
 import { LANGUAGES_ID } from "@/constant";
 import { executeCode } from "@/lib/executeCode";
 import { DrawerButton } from "./DrawerButton";
+import { TagInput } from "./TagInput";
 
 
 
-export function Form() {
 
 
-    const { stdIn, setCode, firstName, setFirstName, lastName, setLastName, code, language, setStdIn, setResult, setLanguage, setDefault } = useFormData((state) => state)
+export function Form({ tags }: { tags: string[] }) {
+
+
+    const { stdIn, setCode, firstName, setFirstName, lastName, setLastName, code, language, setStdIn, setResult, setLanguage, setDefault, tags: selectedTag } = useFormData((state) => state)
 
     async function handleCodeExecution() {
 
@@ -81,7 +84,7 @@ export function Form() {
 
             <form className="my-8" action={async () => {
 
-                const payload = { stdIn, firstName, lastName, code, language, language_id: LANGUAGES_ID[language] }
+                const payload = { stdIn, firstName, lastName, code, language, language_id: LANGUAGES_ID[language], tags: selectedTag }
 
                 const isValid = formDataSchema.safeParse(payload)
 
@@ -131,10 +134,15 @@ export function Form() {
                     <Label htmlFor="stdin">Standard Input</Label>
                     <Input value={stdIn} onChange={(e) => setStdIn(e.target.value)} id="stdIn" placeholder="node index.js" type="text" />
                 </LabelInputContainer>
+
                 <LabelInputContainer className="mb-4">
                     <Label htmlFor="language">Select Language</Label>
                     <SelectLanguage language={language} setLanguage={setLanguage} />
+                </LabelInputContainer>
 
+                <LabelInputContainer className="mb-4">
+                    <Label htmlFor="tags">Tags</Label>
+                    <TagInput data={tags} />
                 </LabelInputContainer>
 
                 <div className="flex gap-3 flex-col">

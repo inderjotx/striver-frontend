@@ -1,4 +1,3 @@
-
 import { env } from "@/env.mjs"
 
 type GetSnippetsResponse<T extends boolean> = T extends true ? { success: T, data: Snippet[] } : { success: T, error: string }

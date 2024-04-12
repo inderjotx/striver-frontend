@@ -79,13 +79,24 @@ export const columns: ColumnDef<Snippet>[] = [
 
     {
         accessorKey: "createdAt",
-        header: "Time",
+        header: ({ column }) => {
+            return (
+                <div
+                    className="flex gap-1 hover:cursor-pointer"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Time
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </div>
+            )
+        },
+
         cell: ({ row }) => {
             const value = row.getValue("createdAt") as string
             const formattedTime = formatTime(value)
-            return <div className="truncate">{`${formattedTime ? formattedTime : "null"}`}</div>
+            return <div className="truncate">{`${formattedTime ? formattedTime : "null"}`}
+            </div>
         }
-
     },
 
 ]

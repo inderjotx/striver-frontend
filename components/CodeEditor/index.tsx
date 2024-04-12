@@ -18,9 +18,6 @@ export function CodeEditor({ height, width, className }: CodeEditorProps) {
     const { language, code, setCode } = useFormData((state) => state)
 
 
-
-
-
     return (
         <MonacoEditor language={language} code={code} setCode={setCode} height={height} width={width} className={className} />
     )

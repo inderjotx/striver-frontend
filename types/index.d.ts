@@ -24,6 +24,7 @@ interface Snippet {
     stdOut: string;
     createdAt: string;
     updatedAt: string;
+    tags: string[]
 }
 
 

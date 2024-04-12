@@ -7,6 +7,7 @@ interface useFormDataProps {
     language: SupportedLanguages,
     stdIn: string,
     result: JudgeResult | string | null,
+    tags: string[],
 
 
     setCode: (val: string) => void,
@@ -15,7 +16,10 @@ interface useFormDataProps {
     setLanguage: (val: SupportedLanguages) => void,
     setStdIn: (val: string) => void,
     setResult: (val: JudgeResult | string | null) => void
-    setDefault: () => void
+    setDefault: () => void,
+    setTag: (val: string[]) => void
+
+
 }
 
 
@@ -28,6 +32,7 @@ export const useFormData = create<useFormDataProps>((set) => ({
     language: "Java",
     stdIn: "",
     result: null,
+    tags: [],
 
 
     setCode: (val) => set({ code: val }),
@@ -43,5 +48,6 @@ export const useFormData = create<useFormDataProps>((set) => ({
         language: "Java",
         stdIn: "",
         result: null,
-    })
+    }),
+    setTag: (val) => set({ tags: val })
 }))
