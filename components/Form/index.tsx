@@ -22,7 +22,7 @@ import { TagInput } from "./TagInput";
 export function Form({ tags }: { tags: string[] }) {
 
 
-    const { stdIn, setCode, firstName, setFirstName, lastName, setLastName, code, language, setStdIn, setResult, setLanguage, setDefault, tags: selectedTag } = useFormData((state) => state)
+    const { stdIn, setCode, firstName, setFirstName, lastName, setLastName, code, setTag, language, setStdIn, setResult, setLanguage, setDefault, tags: selectedTag } = useFormData((state) => state)
 
     async function handleCodeExecution() {
 
@@ -142,7 +142,7 @@ export function Form({ tags }: { tags: string[] }) {
 
                 <LabelInputContainer className="mb-4">
                     <Label htmlFor="tags">Tags</Label>
-                    <TagInput data={tags} />
+                    <TagInput setTagsStore={setTag} data={tags} />
                 </LabelInputContainer>
 
                 <div className="flex gap-3 flex-col">

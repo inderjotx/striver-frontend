@@ -17,10 +17,7 @@ interface DrawerButtonProps extends React.HTMLProps<HTMLDivElement> {
     stdOut: string
 }
 
-
-
 export function DrawerViewCode({ language, stdOut, code, height, width, className = "" }: DrawerButtonProps) {
-
 
     return (
         <Drawer >

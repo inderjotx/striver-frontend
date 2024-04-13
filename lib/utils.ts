@@ -27,3 +27,36 @@ export function formatTime(timeString: string): string {
   return formatter.format(date);
 }
 
+
+export function getFilteredSnippets(data: Snippet[], filter: string[]) {
+
+  if (typeof filter === "string") {
+    filter = [filter]
+  }
+
+  const arr: Snippet[] = []
+  data.forEach((snippet) => {
+
+    let score = 0
+
+    filter.forEach((tag) => {
+      const idx = snippet.tags.indexOf(tag)
+      if (idx === -1) {
+        return
+      }
+      else {
+        score++
+      }
+    })
+
+    if (score === filter.length) {
+      arr.push(snippet)
+    }
+
+
+  })
+
+
+  return arr
+
+}

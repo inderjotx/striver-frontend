@@ -21,13 +21,12 @@ import { useFormData } from "@/store/useFormData"
 
 
 
-export function TagInput({ data }: { data: string[] }) {
+export function TagInput({ data, setTagsStore }: { data: string[], setTagsStore: (data: string[]) => void }) {
 
 
     const [open, setOpen] = React.useState(false)
     const [value, setValue] = React.useState("")
     const [tags, setTags] = React.useState<string[]>([])
-    const setTagsStore = useFormData((store) => store.setTag)
 
     const tagMap = data.map((item) => ({
         value: item,
